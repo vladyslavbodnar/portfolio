@@ -1,3 +1,4 @@
+import About from "./components/About";
 import Header from "./components/Header";
 import WelcomeScreen from "./components/WelcomeScreen";
 
@@ -8,6 +9,7 @@ function App() {
         <div className="App">
             <Header />
             <WelcomeScreen />
+            <About />
         </div>
     );
 }
