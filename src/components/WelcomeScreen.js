@@ -6,6 +6,7 @@ import linkedinLogo from "../assets/images/linkedin.svg";
 const WelcomeScreen = () => {
     return (
         <div
+            id="welcomeScreen"
             className="Welcome-screen"
             style={{
                 backgroundImage: `url(${snowBackground})`,

@@ -1,7 +1,7 @@
 const About = () => {
     return (
-        <div className="About">
-            <div className="About__title">About me</div>
+        <div className="About" id="about">
+            <h2 className="About__title">About me</h2>
             <div className="About__text-container">
                 <p className="About__text">
                     Responsible and motivated web developer with over 2 years of experience. Skilled in building web apps using JavaScript/React,

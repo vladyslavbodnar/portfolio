@@ -34,6 +34,7 @@ a {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    z-index: 10;
 }
 
 .Header__burger {
@@ -83,8 +84,15 @@ a {
 .Header__burger--open span::before {
     transform: translateY(0);
 }
-
 .Header__burger--open span::after {
+    transform: translateY(0);
+}
+
+.Header__burger:focus-within span::before {
+    transform: translateY(0);
+    color: red;
+}
+.Header__burger:focus-within span::after {
     transform: translateY(0);
 }
 
@@ -95,7 +103,8 @@ a {
     width: 100%;
     position: absolute;
     top: 57px;
-    transition: 0.3s;
+    left: -100%;
+    transition: 0.7s;
 }
 
 .Header__links::before {
@@ -115,6 +124,11 @@ a {
     align-items: center;
     position: relative;
     left: -105%;
+}
+
+.Header__burger--open ~ .Header__links {
+    visibility: visible;
+    left: 0;
 }
 
 .Header__burger--open ~ .Header__links .Header__links-item {
@@ -181,10 +195,12 @@ a {
     flex-direction: column;
     align-items: center;
     background-color: var(--secondary-color);
-    padding: 74px 0 66px 0;
+    padding: 74px 0 0 0;
 }
 
-.About__title {
+.About__title,
+.Skills__title,
+.Portfolio__title {
     text-transform: uppercase;
     max-width: 210px;
     width: 100%;
@@ -196,6 +212,7 @@ a {
     margin-bottom: 38px;
     font-weight: bold;
     letter-spacing: 0.43em;
+    font-size: 1rem;
 }
 
 .About__text-container {
@@ -222,7 +239,151 @@ a {
     border-right: 3px solid var(--primary-color);
     text-transform: uppercase;
     padding: 0.5rem 1.9rem;
-
     font-weight: bold;
     letter-spacing: 0.1em;
+}
+
+.Skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 100px 50px;
+}
+
+.Skills__title {
+    margin: 0;
+}
+
+.Skills__items-wrapper {
+}
+
+.Skills__subtitle {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 47px 0;
+    font-size: 1.35em;
+}
+
+.Skills__items {
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+    row-gap: 3rem;
+}
+
+.Skills__item {
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Skills__item-image {
+    max-width: 150px;
+}
+
+.Skills__item-title {
+}
+
+.Portfolio {
+    padding: 65px 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.Portfolio__title {
+    align-self: center;
+}
+
+.Portfolio__items {
+}
+
+.Portfolio__item {
+    position: relative;
+}
+
+.Portfolio__item:not(:last-child) {
+    margin-bottom: 4rem;
+}
+
+.Portfolio__item:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 5px;
+    width: 150px;
+    border-radius: 3px;
+    background-color: var(--primary-color);
+}
+
+.Portfolio__item-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 40vh;
+    width: 100%;
+}
+
+.Portfolio__item-title {
+    margin: 0 0 1rem;
+}
+
+.Portfolio__item-description {
+    margin: 0 0 1rem;
+}
+
+.Portfolio__item-link-container {
+    margin-bottom: 1rem;
+    display: flex;
+    column-gap: 0.7rem;
+}
+
+.Portfolio__item-link {
+    color: var(--primary-color);
+}
+
+.Footer {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 46px 0 55px 0;
+}
+
+.Footer__back-to-top {
+    text-transform: uppercase;
+    color: var(--tertiary-color);
+    position: relative;
+    margin-bottom: 45px;
+    padding-top: 2rem;
+}
+
+.Footer__back-top-top-arrow {
+    transform: rotate(-90deg) translateY(-50%);
+    position: absolute;
+    top: 0%;
+    left: 50%;
+}
+
+.Footer__links {
+    display: flex;
+}
+
+.Footer__links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+.Footer__links img {
+    width: 29px;
 }

@@ -17,8 +17,6 @@ const Header = () => {
         }
     };
 
-    const generateAnimationDelay = () => {};
-
     const links = useMemo(() => {
         return [
             {
@@ -33,16 +31,11 @@ const Header = () => {
                 title: "Portfolio",
                 link: "#portfolio",
             },
-            {
-                title: "Contact me",
-                link: "#contact",
-                inverted: true,
-            },
         ];
     }, []);
 
     return (
-        <div className="Header">
+        <header className="Header">
             <div className={`Header__burger ${isBurgerOpen ? "Header__burger--open" : ""}`} onClick={handleBurger}>
                 <span></span>
             </div>
@@ -66,7 +59,7 @@ const Header = () => {
                     );
                 })}
             </ul>
-        </div>
+        </header>
     );
 };
 
