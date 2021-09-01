@@ -47,12 +47,16 @@ const Header = () => {
 
                     return (
                         <li
-                            tabIndex={linkIndex + 1}
                             key={link.title}
                             className={`Header__links-item ${link.inverted ? "Header__links-item--inverted" : ""}`}
                             style={{ transition: `left ${animationTime}s cubic-bezier(0, 0, 0.29, 0.94)` }}
                         >
-                            <a className="Header__link" href={link.link} onClick={() => handleBurger(false)}>
+                            <a
+                                tabIndex={linkIndex + 1}
+                                className="Header__link"
+                                href={link.link}
+                                onClick={() => handleBurger(false)}
+                            >
                                 {link.title}
                             </a>
                         </li>

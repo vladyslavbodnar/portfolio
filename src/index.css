@@ -9,11 +9,14 @@
     --tertiary-color-rgb: 255 255 255;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -88,14 +91,6 @@ a {
     transform: translateY(0);
 }
 
-.Header__burger:focus-within span::before {
-    transform: translateY(0);
-    color: red;
-}
-.Header__burger:focus-within span::after {
-    transform: translateY(0);
-}
-
 .Header__links {
     list-style: none;
     padding: 0;
@@ -127,7 +122,6 @@ a {
 }
 
 .Header__burger--open ~ .Header__links {
-    visibility: visible;
     left: 0;
 }
 
@@ -142,13 +136,6 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.Header__links-item--inverted {
-    background-color: rgb(var(--tertiary-color-rgb) / 0.7);
-}
-.Header__links-item--inverted .Header__link {
-    color: var(--primary-color);
 }
 
 .Welcome-screen {
@@ -183,7 +170,7 @@ a {
     width: 100px;
     border-radius: 3px;
     background-color: var(--tertiary-color);
-    margin: 0 0 26px 0;
+    margin: 0 0 19px 0;
 }
 
 .Welcome-screen__links img {
@@ -244,11 +231,14 @@ a {
 }
 
 .Skills {
+    background-color: var(--secondary-color);
+    padding: 100px 50px;
+}
+
+.Skills__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--secondary-color);
-    padding: 100px 50px;
 }
 
 .Skills__title {
@@ -292,6 +282,9 @@ a {
 
 .Portfolio {
     padding: 65px 1rem 1rem;
+}
+
+.Portfolio__wrapper {
     display: flex;
     flex-direction: column;
 }
@@ -316,7 +309,7 @@ a {
     position: absolute;
     bottom: -2rem;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 50%);
 
     height: 5px;
     width: 150px;
@@ -386,4 +379,255 @@ a {
 }
 .Footer__links img {
     width: 29px;
+}
+
+@media (min-width: 992px) {
+    .Header {
+        background-color: transparent;
+        position: absolute;
+    }
+
+    .Header__burger {
+        display: none;
+    }
+
+    .Header__burger span {
+    }
+
+    .Header__burger span::before,
+    .Header__burger span::after {
+    }
+    .Header__burger span::before {
+    }
+    .Header__burger span::after {
+    }
+
+    .Header__burger span,
+    .Header__burger span::before,
+    .Header__burger span::after {
+    }
+
+    .Header__burger--open {
+    }
+
+    .Header__burger--open span::before {
+    }
+    .Header__burger--open span::after {
+    }
+
+    .Header__links {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 2rem 2rem 0;
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 2rem;
+    }
+
+    .Header__links::before {
+        content: none;
+    }
+
+    .Header__links-item {
+        border-radius: 20px;
+        left: 0;
+    }
+
+    .Header__burger--open ~ .Header__links {
+    }
+
+    .Header__burger--open ~ .Header__links .Header__links-item {
+    }
+
+    .Header__link {
+        padding: 1rem 2rem;
+    }
+
+    .Welcome-screen {
+    }
+
+    .Welcome-screen__greetings {
+        font-size: 2rem;
+        margin: 0 0 4px;
+    }
+    .Welcome-screen__name {
+        font-size: 3rem;
+        margin: 0 0 5px;
+    }
+    .Welcome-screen__role {
+        font-size: 2rem;
+        margin: 0 0 14px;
+    }
+
+    .Welcome-screen__links {
+    }
+
+    .Welcome-screen__break-line {
+    }
+
+    .Welcome-screen__links img {
+        width: 34px;
+    }
+
+    .About {
+        /* mobile styles */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--secondary-color);
+        padding: 74px 0 0 0;
+    }
+
+    .About__title,
+    .Skills__title,
+    .Portfolio__title {
+        max-width: 404px;
+        font-size: 1.5rem;
+        margin-bottom: 71px;
+        letter-spacing: 0.35538em;
+        padding: 1.8rem 0;
+    }
+    .About__text-container {
+        max-width: 763px;
+    }
+
+    .About__text {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .About__text:first-child {
+        margin-bottom: 1rem;
+    }
+    .About__text:last-child {
+        margin-bottom: 67px;
+    }
+
+    .About__subtitle {
+    }
+
+    .Skills {
+    }
+
+    .Skills__wrapper {
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    .Skills__title {
+    }
+
+    .Skills__items-wrapper {
+    }
+
+    .Skills__subtitle {
+        font-size: 1.5rem;
+    }
+
+    .Skills__items {
+    }
+
+    .Skills__item {
+        justify-content: space-between;
+    }
+
+    .Skills__item-image {
+    }
+
+    .Skills__item-title {
+    }
+
+    .Portfolio {
+        padding: 107px 1rem 1rem;
+    }
+
+    .Portfolio__wrapper {
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    .Portfolio__title {
+        margin-bottom: 107px;
+    }
+
+    .Portfolio__items {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        column-gap: 0.5%;
+        row-gap: 2rem;
+    }
+
+    .Portfolio__item {
+        flex: 0 0 33%;
+    }
+
+    .Portfolio__item:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    .Portfolio__item:not(:last-child)::before {
+        content: none;
+    }
+
+    .Portfolio__item-container {
+        position: absolute;
+        inset: 0;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        color: var(--tertiary-color);
+    }
+
+    .Portfolio__item-container:hover {
+        background-color: rgb(var(--primary-color-rgb) / 0.5);
+    }
+
+    .Portfolio__item-image {
+    }
+
+    .Portfolio__item-title {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .Portfolio__item-description {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .Portfolio__item-link-container {
+        column-gap: 1rem;
+    }
+
+    .Portfolio__item-link {
+        color: var(--tertiary-color);
+    }
+
+    .Portfolio__item-link svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .Footer {
+    }
+
+    .Footer__back-to-top {
+    }
+
+    .Footer__back-top-top-arrow {
+    }
+
+    .Footer__links {
+    }
+
+    .Footer__links {
+    }
+    .Footer__links img {
+        width: 34px;
+    }
 }

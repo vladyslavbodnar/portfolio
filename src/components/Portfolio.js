@@ -25,22 +25,26 @@ const Portfolio = () => {
 
     return (
         <div className="Portfolio" id="portfolio">
-            <h2 className="Portfolio__title">Portfolio</h2>
-            <div className="Portfolio__items">
-                {portfolioItems.map(portfolioItem => {
-                    return (
-                        <div className="Portfolio__item">
-                            <h2 className="Portfolio__item-title">{portfolioItem.title}</h2>
-                            <p className="Portfolio__item-description">{portfolioItem.description}</p>
-                            <div className="Portfolio__item-link-container">
-                            <a className="Portfolio__item-link" href={portfolioItem.sourceLink} target="_blank" title="Souce code"><GitHubIcon /></a>
-                            <a className="Portfolio__item-link" href={portfolioItem.liveLink} target="_blank" title="Live version"><LinkIcon /></a>
+            <div className="Portfolio__wrapper">
+                <h2 className="Portfolio__title">Portfolio</h2>
+                <div className="Portfolio__items">
+                    {portfolioItems.map(portfolioItem => {
+                        return (
+                            <div className="Portfolio__item">
+                                <div className="Portfolio__item-container">
+                                    <h2 className="Portfolio__item-title">{portfolioItem.title}</h2>
+                                    <p className="Portfolio__item-description">{portfolioItem.description}</p>
+                                    <div className="Portfolio__item-link-container">
+                                        <a className="Portfolio__item-link" href={portfolioItem.sourceLink} target="_blank" title="Souce code"><GitHubIcon /></a>
+                                        <a className="Portfolio__item-link" href={portfolioItem.liveLink} target="_blank" title="Live version"><LinkIcon /></a>
+                                    </div>
+                                </div>
+                                
+                                <div className="Portfolio__item-image" style={{backgroundImage: `url(${process.env.PUBLIC_URL + portfolioItem.image})`}}></div>
                             </div>
-                            
-                            <div className="Portfolio__item-image" style={{backgroundImage: `url(${process.env.PUBLIC_URL + portfolioItem.image})`}}></div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )
