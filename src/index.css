@@ -613,6 +613,21 @@ a {
         height: 35px;
     }
 
+    .Portfolio__item-title,
+    .Portfolio__item-description,
+    .Portfolio__item-link-container {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+
+    .Portfolio__item-container:hover .Portfolio__item-title,
+    .Portfolio__item-container:hover .Portfolio__item-description,
+    .Portfolio__item-container:hover .Portfolio__item-link-container {
+        visibility: visible;
+        opacity: 1;
+    }
+
     .Footer {
     }
 
